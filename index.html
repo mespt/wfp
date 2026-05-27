@@ -23,7 +23,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -31,15 +30,6 @@
       background: var(--cream);
       color: var(--text-dark);
       overflow-x: hidden;
-    }
-
-    /* ── DECORATIVE SVG PATTERNS ── */
-    .pattern-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0;
     }
 
     /* ── HERO ── */
@@ -65,7 +55,6 @@
       z-index: 0;
     }
 
-    /* Animated grain overlay */
     .hero::after {
       content: '';
       position: absolute;
@@ -80,35 +69,22 @@
 
     .hero-content { position: relative; z-index: 1; max-width: 860px; }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(212,168,67,.15);
-      border: 1px solid rgba(212,168,67,.4);
-      color: var(--gold-light);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.2s forwards;
-    }
-
-    .badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--gold);
+    /* ── CIRCULAR LOGO ── */
+    .hero-logo {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: .5; transform: scale(1.4); }
+      object-fit: contain;
+      background: #fff;
+      padding: 10px;
+      margin: 0 auto 32px;
+      display: block;
+      box-shadow:
+        0 0 0 4px rgba(212,168,67,.35),
+        0 0 0 8px rgba(212,168,67,.12),
+        0 16px 40px rgba(0,0,0,.3);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
     }
 
     .hero-eyebrow {
@@ -120,7 +96,7 @@
       color: var(--green-light);
       margin-bottom: 20px;
       opacity: 0;
-      animation: fadeUp 0.7s ease 0.4s forwards;
+      animation: fadeUp 0.7s ease 0.35s forwards;
     }
 
     .hero-title {
@@ -132,7 +108,7 @@
       letter-spacing: -0.01em;
       margin-bottom: 28px;
       opacity: 0;
-      animation: fadeUp 0.8s ease 0.55s forwards;
+      animation: fadeUp 0.8s ease 0.5s forwards;
     }
 
     .hero-title span {
@@ -160,7 +136,7 @@
       max-width: 640px;
       margin: 0 auto 48px;
       opacity: 0;
-      animation: fadeUp 0.8s ease 0.7s forwards;
+      animation: fadeUp 0.8s ease 0.65s forwards;
     }
 
     /* ── META CARDS ── */
@@ -171,7 +147,7 @@
       justify-content: center;
       margin-bottom: 60px;
       opacity: 0;
-      animation: fadeUp 0.8s ease 0.85s forwards;
+      animation: fadeUp 0.8s ease 0.8s forwards;
     }
 
     .meta-card {
@@ -215,7 +191,7 @@
       padding: 14px 36px;
       border-radius: 100px;
       opacity: 0;
-      animation: fadeUp 0.8s ease 1.0s forwards;
+      animation: fadeUp 0.8s ease 0.95s forwards;
     }
 
     /* ── SCROLL ARROW ── */
@@ -250,16 +226,21 @@
 
     @keyframes bounce {
       0%, 100% { transform: rotate(45deg) translateY(0); }
-      50% { transform: rotate(45deg) translateY(6px); }
+      50%       { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ── DECORATIVE LEAF ── */
+    .deco-leaf {
+      position: absolute;
+      opacity: 0.08;
+      pointer-events: none;
     }
 
     /* ── SECTION ── */
-    .section {
-      padding: 100px 24px;
-    }
+    .section { padding: 100px 24px; }
 
     .section-inner {
-      max-width: 940px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
@@ -296,6 +277,8 @@
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .meeting-card:hover {
@@ -326,6 +309,7 @@
       padding: 5px 14px;
       border-radius: 100px;
       margin-bottom: 20px;
+      align-self: flex-start;
     }
 
     .meeting-card.day2 .day-pill {
@@ -335,33 +319,99 @@
 
     .meeting-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--green-deep);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       line-height: 1.2;
+    }
+
+    .meeting-theme {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-mid);
+      font-style: italic;
+      margin-bottom: 10px;
+      line-height: 1.45;
     }
 
     .meeting-desc {
       font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.65;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* ── INLINE VENUE LINK (blends into prose) ── */
+    .venue-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 600;
+      color: var(--green-mid);
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+      vertical-align: baseline;
+      line-height: inherit;
+    }
+
+    .venue-inline:hover {
+      color: var(--green-deep);
+      text-decoration-color: var(--green-mid);
+    }
+
+    .venue-inline svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      fill: currentColor;
+      position: relative;
+      top: -1px;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .venue-inline:hover svg {
+      opacity: 1;
+    }
+
+    /* ── BUTTON ROW ── */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .join-btn, .dir-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s ease, transform 0.2s ease;
     }
 
     .join-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
       background: var(--green-deep);
       color: var(--cream);
-      text-decoration: none;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 13px 26px;
-      border-radius: 100px;
-      transition: background 0.25s ease, transform 0.2s ease;
     }
 
     .join-btn:hover {
@@ -378,13 +428,113 @@
       background: var(--gold-light);
     }
 
-    .join-btn .icon {
-      width: 18px; height: 18px;
+    .dir-btn {
+      background: transparent;
+      color: var(--green-mid);
+      border: 1.5px solid var(--green-mid);
+    }
+
+    .dir-btn:hover {
+      background: var(--green-mid);
+      color: #fff;
+      transform: scale(1.03);
+    }
+
+    .meeting-card.day2 .dir-btn {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .meeting-card.day2 .dir-btn:hover {
+      background: var(--gold);
+      color: var(--green-deep);
+    }
+
+    .btn-icon {
+      width: 16px; height: 16px;
       fill: none;
       stroke: currentColor;
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── MAP MODAL ── */
+    .map-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(10, 25, 16, 0.75);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .map-modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .map-modal-box {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 780px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.35);
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(.22,1,.36,1);
+      position: relative;
+    }
+
+    .map-modal.active .map-modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .map-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 22px;
+      background: var(--green-deep);
+    }
+
+    .map-modal-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+    }
+
+    .map-close {
+      background: rgba(255,255,255,.12);
+      border: none;
+      color: var(--cream);
+      font-size: 1.1rem;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      line-height: 1;
+    }
+
+    .map-close:hover { background: rgba(255,255,255,.25); }
+
+    .map-modal-iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
     }
 
     /* ── DIVIDER ── */
@@ -409,12 +559,12 @@
       background: radial-gradient(ellipse 60% 70% at 90% 50%, rgba(82,183,136,.12) 0%, transparent 60%);
     }
 
-    .about-section .section-label { color: var(--green-light); }
+    .about-section .section-label  { color: var(--green-light); }
     .about-section .section-heading { color: var(--cream); }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 48px;
       position: relative;
       z-index: 1;
@@ -424,46 +574,65 @@
       font-size: 1rem;
       color: rgba(250,247,240,.75);
       line-height: 1.8;
+      max-width: 720px;
     }
 
     .about-text p + p { margin-top: 16px; }
-
-    .stat-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .stat-item {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 14px;
-      padding: 20px 24px;
-    }
-
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .stat-desc {
-      font-size: 0.85rem;
-      color: rgba(250,247,240,.6);
-      line-height: 1.5;
-    }
 
     /* ── FOOTER ── */
     footer {
       background: var(--text-dark);
       text-align: center;
-      padding: 40px 24px;
+      padding: 48px 24px 36px;
     }
 
-    .footer-logo {
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-org {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      opacity: 0.85;
+    }
+
+    .footer-org:hover { transform: translateY(-3px); opacity: 1; }
+
+    .footer-org img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      padding: 4px;
+      filter: brightness(0.95);
+    }
+
+    .footer-org-name {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(250,247,240,.45);
+    }
+
+    .footer-divider {
+      width: 60px;
+      height: 1px;
+      background: rgba(250,247,240,.1);
+      margin: 0 auto 20px;
+    }
+
+    .footer-logo-text {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
       font-weight: 600;
@@ -473,15 +642,8 @@
 
     .footer-sub {
       font-size: 0.78rem;
-      color: rgba(250,247,240,.4);
+      color: rgba(250,247,240,.35);
       letter-spacing: 0.08em;
-    }
-
-    /* ── DECORATIVE LEAF SVG (corner) ── */
-    .deco-leaf {
-      position: absolute;
-      opacity: 0.08;
-      pointer-events: none;
     }
 
     /* ── ANIMATIONS ── */
@@ -495,33 +657,48 @@
       to   { opacity: 1; }
     }
 
-    /* Scroll-reveal */
     .reveal {
       opacity: 0;
       transform: translateY(32px);
       transition: opacity 0.75s ease, transform 0.75s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.22s; }
-    .reveal-delay-3 { transition-delay: 0.34s; }
+    .reveal.visible       { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1       { transition-delay: 0.1s; }
+    .reveal-delay-2       { transition-delay: 0.22s; }
+    .reveal-delay-3       { transition-delay: 0.34s; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 680px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .meta-card { min-width: 140px; }
+      .meta-card        { min-width: 140px; }
+      .map-modal-iframe { height: 320px; }
+      .footer-logos     { gap: 20px; }
+      .footer-org img   { width: 46px; height: 46px; }
     }
   </style>
 </head>
 <body>
 
+<!-- ══════════════ MAP MODAL ══════════════ -->
+<div class="map-modal" id="mapModal" role="dialog" aria-modal="true" aria-label="Venue Map">
+  <div class="map-modal-box">
+    <div class="map-modal-header">
+      <span class="map-modal-title" id="mapModalTitle">Venue Location</span>
+      <button class="map-close" onclick="closeMap()" aria-label="Close map">✕</button>
+    </div>
+    <iframe
+      class="map-modal-iframe"
+      id="mapFrame"
+      src=""
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero">
 
-  <!-- Decorative botanical SVG -->
   <svg class="deco-leaf" style="top:-60px;right:-80px;width:520px;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#52b788" stroke-width="1.2">
       <ellipse cx="200" cy="200" rx="160" ry="80" transform="rotate(30 200 200)"/>
@@ -547,35 +724,30 @@
   </svg>
 
   <div class="hero-content">
-    <div class="badge">4th June · Global Observance</div>
-
-    <p class="hero-eyebrow">EAC Regional Webinar</p>
-
+    <img src="wfp.jpeg" alt="WFP Logo" class="hero-logo" />
+    <!-- <p class="hero-eyebrow">EAC Regional Webinar</p> -->
     <h1 class="hero-title">
       World Food<br/><span>Safety Day</span><br/>2026
     </h1>
-
     <p class="hero-subtitle">
       East African Community Regional Webinar on the Commemoration of
       World Food Safety Day 2026 &mdash; bringing together experts, policymakers,
       and stakeholders across the region.
     </p>
-
     <div class="meta-strip">
       <div class="meta-card">
-        <span class="label">Date</span>
-        <span class="value">4th June 2026</span>
+        <span class="label">Dates</span>
+        <span class="value">2nd – 5th June 2026</span>
       </div>
       <div class="meta-card">
         <span class="label">Format</span>
-        <span class="value">Virtual Webinar</span>
+        <span class="value">Hybrid Webinar</span>
       </div>
       <div class="meta-card">
         <span class="label">Organiser</span>
         <span class="value">EAC Region</span>
       </div>
     </div>
-
     <div class="theme-band">
       &ldquo;From Burden to Solution &mdash; Safe Food Everywhere&rdquo;
     </div>
@@ -589,7 +761,7 @@
 
 <hr class="divider" />
 
-<!-- ══════════════ MEETINGS ══════════════ -->
+<!-- ══════════════ SESSIONS ══════════════ -->
 <section class="section">
   <div class="section-inner">
     <p class="section-label reveal">Session Links</p>
@@ -599,31 +771,70 @@
 
       <!-- DAY 1 -->
       <div class="meeting-card reveal reveal-delay-2">
-        <span class="day-pill">Day 1</span>
-        <h3 class="meeting-title">Zoom Meeting Session &mdash; on 1st June 2026</h3>
+        <span class="day-pill">Day 1 · 2 June</span>
+        <h3 class="meeting-title">Main Conference Session</h3>
+        <p class="meeting-theme">Strengthening Food Safety in Formal Markets</p>
         <p class="meeting-desc">
-          Join us for the official opening session.
+          Official opening session hosted at the Kenya Bureau of Standards (KEBS) Head Office, Nairobi.
         </p>
-        <!-- Replace # with your actual Day 1 meeting link -->
-        <a href="https://iso.zoom.us/j/93752936481?pwd=lBcDkZHZs8c94fNPCnpaMoG6IszAoc.1" class="join-btn" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-          Join Day 1 Meeting
-        </a>
+        <div class="btn-row">
+          <button class="dir-btn" onclick="openMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.07835810377!2d36.762681221679664!3d-1.3228899999999968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11b747af519d%3A0x8c232adc11c402d9!2sKenya%20Bureau%20of%20Standards%20-%20Head%20Office!5e0!3m2!1sen!2ske!4v1779858650975!5m2!1sen!2ske', 'KEBS Head Office')">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Get Directions
+          </button>
+        </div>
       </div>
 
       <!-- DAY 2 -->
-      <div class="meeting-card day2 reveal reveal-delay-3">
-        <span class="day-pill">Day 2</span>
-        <h3 class="meeting-title">Microsoft Teams Session &mdash; 2nd June 2026</h3>
+      <div class="meeting-card reveal reveal-delay-2">
+        <span class="day-pill">Day 2 · 3 June</span>
+        <h3 class="meeting-title">National Hybrid Webinar</h3>
+        <p class="meeting-theme">Food Production &amp; Handling Practices with Focus on Mycotoxins</p>
         <p class="meeting-desc">
-          Engage in technical discussions, working group sessions, and the
-          formulation of regional commitments toward safer food systems for all.
+          Hybrid session combining in-person attendance at
+          <button class="venue-inline" onclick="openMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.07835810377!2d36.762681221679664!3d-1.3228899999999968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11b747af519d%3A0x8c232adc11c402d9!2sKenya%20Bureau%20of%20Standards%20-%20Head%20Office!5e0!3m2!1sen!2ske!4v1779858650975!5m2!1sen!2ske', 'KEBS Head Office')">
+            KEBS<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </button>
+          with a live Zoom broadcast for remote participants.
         </p>
-        <!-- Replace # with your actual Day 2 Zoom link -->
-        <a href="https://teams.microsoft.com/meet/347207967463721?p=kXMU8AP10vaIsaZCfY" class="join-btn" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-          Join Day 2 Meeting
-        </a>
+        <div class="btn-row">
+          <a href="https://iso.zoom.us/j/93752936481?pwd=lBcDkZHZs8c94fNPCnpaMoG6IszAoc.1" class="join-btn" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            Join on Zoom
+          </a>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="meeting-card day2 reveal reveal-delay-3">
+        <span class="day-pill">Day 3 · 4 June</span>
+        <h3 class="meeting-title">EAC Regional Virtual Webinar</h3>
+        <p class="meeting-theme">Food MRLs and Contaminants</p>
+        <p class="meeting-desc">
+          Regional online session via Microsoft Teams, open to participants across all EAC Partner States.
+        </p>
+        <div class="btn-row">
+          <a href="https://teams.microsoft.com/meet/347207967463721?p=kXMU8AP10vaIsaZCfY" class="join-btn" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            Join on Teams
+          </a>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="meeting-card day2 reveal reveal-delay-3">
+        <span class="day-pill">Day 4 · 5 June</span>
+        <h3 class="meeting-title">Nairobi City Park Market Clean-Up</h3>
+        <p class="meeting-theme">From Burden to Solution — Safe Food Everywhere</p>
+        <p class="meeting-desc">
+          Community clean-up and food safety awareness exercise at Nairobi City Park Market.
+        </p>
+        <div class="btn-row">
+          <button class="dir-btn" onclick="openMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.394975433648!2d36.81075640538443!3d-1.2631673814659594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16e0a361a209%3A0x9e36784a50f9d8a!2sCity%20Park!5e0!3m2!1sen!2ske!4v1779859304567!5m2!1sen!2ske', 'Nairobi City Park')">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Get Directions
+          </button>
+        </div>
       </div>
 
     </div>
@@ -639,11 +850,11 @@
       <div>
         <p class="section-label reveal">About the Theme</p>
         <h2 class="section-heading reveal reveal-delay-1">
-          From Burden<br/>to Solution - Safe Food Everywhere
+          From Burden to Solution<br/>— Safe Food Everywhere
         </h2>
         <div class="about-text reveal reveal-delay-2">
           <p>
-            World Food Safety Day, observed annually on 4th June, is a global
+            World Food Safety Day, observed annually on 7th June, is a global
             platform to draw attention to and inspire action to prevent, detect,
             and manage foodborne risks.
           </p>
@@ -660,33 +871,33 @@
           </p>
         </div>
       </div>
-
-      <!-- <div class="stat-list reveal reveal-delay-2">
-        <div class="stat-item">
-          <div class="stat-num">600M</div>
-          <div class="stat-desc">People fall ill every year from eating contaminated food globally</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">420K</div>
-          <div class="stat-desc">Deaths annually attributed to preventable foodborne diseases</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">7 EAC</div>
-          <div class="stat-desc">Partner States committed to advancing regional food safety standards</div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
 
 <!-- ══════════════ FOOTER ══════════════ -->
 <footer>
-  <div class="footer-logo">EAC Regional Webinar · World Food Safety Day 2026</div>
-  <div class="footer-sub">4th June 2026 &nbsp;·&nbsp; Theme: From Burden to Solution — Safe Food Everywhere</div>
+  <div class="footer-logos">
+    <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="footer-org">
+      <img src="who.png" alt="World Health Organization" />
+      <span class="footer-org-name">WHO</span>
+    </a>
+    <a href="https://www.fao.org" target="_blank" rel="noopener noreferrer" class="footer-org">
+      <img src="fao.png" alt="Food and Agriculture Organization" />
+      <span class="footer-org-name">FAO</span>
+    </a>
+    <a href="https://sdgs.un.org" target="_blank" rel="noopener noreferrer" class="footer-org">
+      <img src="sdg.png" alt="UN Sustainable Development Goals" />
+      <span class="footer-org-name">SDGs</span>
+    </a>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-logo-text">EAC Regional Webinar · World Food Safety Day 2026</div>
+  <div class="footer-sub">2nd – 5th June 2026 &nbsp;·&nbsp; Theme: From Burden to Solution — Safe Food Everywhere</div>
 </footer>
 
+<!-- ══════════════ JS ══════════════ -->
 <script>
-  // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -695,9 +906,29 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.15 });
-
+  }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
+
+  function openMap(src, title) {
+    document.getElementById('mapFrame').src = src;
+    document.getElementById('mapModalTitle').textContent = title || 'Venue Location';
+    document.getElementById('mapModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMap() {
+    document.getElementById('mapModal').classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { document.getElementById('mapFrame').src = ''; }, 350);
+  }
+
+  document.getElementById('mapModal').addEventListener('click', function(e) {
+    if (e.target === this) closeMap();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMap();
+  });
 </script>
 
 </body>
