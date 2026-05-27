@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Food Safety Day 2026 — EAC Regional Webinar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-deep:   #1a3d2b;
+      --green-mid:    #2d6a4f;
+      --green-light:  #52b788;
+      --gold:         #d4a843;
+      --gold-light:   #f0c96a;
+      --cream:        #faf7f0;
+      --cream-dark:   #ede8dc;
+      --text-dark:    #111c15;
+      --text-muted:   #4a6355;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── DECORATIVE SVG PATTERNS ── */
+    .pattern-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--green-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 20% 80%, rgba(82,183,136,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212,168,67,.12) 0%, transparent 55%);
+      z-index: 0;
+    }
+
+    /* Animated grain overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 860px; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,168,67,.15);
+      border: 1px solid rgba(212,168,67,.4);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.2s forwards;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.4); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 6.5rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.55s forwards;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title span::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 4px;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      opacity: .35;
+      border-radius: 2px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 400;
+      color: rgba(250,247,240,.7);
+      line-height: 1.7;
+      max-width: 640px;
+      margin: 0 auto 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.7s forwards;
+    }
+
+    /* ── META CARDS ── */
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.85s forwards;
+    }
+
+    .meta-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding: 18px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 170px;
+    }
+
+    .meta-card .label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green-light);
+    }
+
+    .meta-card .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--cream);
+    }
+
+    /* ── THEME BAND ── */
+    .theme-band {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--green-deep);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      padding: 14px 36px;
+      border-radius: 100px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.0s forwards;
+    }
+
+    /* ── SCROLL ARROW ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.5s forwards;
+      z-index: 1;
+    }
+
+    .scroll-hint span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(250,247,240,.4);
+    }
+
+    .scroll-arrow {
+      width: 22px; height: 22px;
+      border-right: 2px solid rgba(250,247,240,.3);
+      border-bottom: 2px solid rgba(250,247,240,.3);
+      transform: rotate(45deg);
+      animation: bounce 1.6s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(6px); }
+    }
+
+    /* ── SECTION ── */
+    .section {
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1.15;
+      margin-bottom: 48px;
+    }
+
+    /* ── MEETING CARDS ── */
+    .meetings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .meeting-card {
+      background: #fff;
+      border: 1px solid var(--cream-dark);
+      border-radius: 20px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .meeting-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(26,61,43,.12);
+    }
+
+    .meeting-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+    }
+
+    .meeting-card.day2::before {
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+
+    .day-pill {
+      display: inline-block;
+      background: var(--green-deep);
+      color: var(--cream);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .meeting-card.day2 .day-pill {
+      background: var(--gold);
+      color: var(--green-deep);
+    }
+
+    .meeting-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .meeting-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green-deep);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 100px;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+
+    .join-btn:hover {
+      background: var(--green-mid);
+      transform: scale(1.03);
+    }
+
+    .meeting-card.day2 .join-btn {
+      background: var(--gold);
+      color: var(--green-deep);
+    }
+
+    .meeting-card.day2 .join-btn:hover {
+      background: var(--gold-light);
+    }
+
+    .join-btn .icon {
+      width: 18px; height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cream-dark), transparent);
+      margin: 0 24px;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-section {
+      background: var(--green-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 90% 50%, rgba(82,183,136,.12) 0%, transparent 60%);
+    }
+
+    .about-section .section-label { color: var(--green-light); }
+    .about-section .section-heading { color: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: rgba(250,247,240,.75);
+      line-height: 1.8;
+    }
+
+    .about-text p + p { margin-top: 16px; }
+
+    .stat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .stat-item {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-desc {
+      font-size: 0.85rem;
+      color: rgba(250,247,240,.6);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark);
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .footer-sub {
+      font-size: 0.78rem;
+      color: rgba(250,247,240,.4);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── DECORATIVE LEAF SVG (corner) ── */
+    .deco-leaf {
+      position: absolute;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Scroll-reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.34s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .meta-card { min-width: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+
+  <!-- Decorative botanical SVG -->
+  <svg class="deco-leaf" style="top:-60px;right:-80px;width:520px;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#52b788" stroke-width="1.2">
+      <ellipse cx="200" cy="200" rx="160" ry="80" transform="rotate(30 200 200)"/>
+      <ellipse cx="200" cy="200" rx="130" ry="60" transform="rotate(30 200 200)"/>
+      <line x1="200" y1="120" x2="200" y2="280" transform="rotate(30 200 200)"/>
+      <line x1="160" y1="155" x2="200" y2="200" transform="rotate(30 200 200)"/>
+      <line x1="170" y1="175" x2="200" y2="200" transform="rotate(30 200 200)"/>
+      <line x1="240" y1="155" x2="200" y2="200" transform="rotate(30 200 200)"/>
+      <line x1="230" y1="175" x2="200" y2="200" transform="rotate(30 200 200)"/>
+    </g>
+  </svg>
+
+  <svg class="deco-leaf" style="bottom:-40px;left:-60px;width:460px;opacity:.05;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#d4a843" stroke-width="1.5">
+      <circle cx="200" cy="200" r="150"/>
+      <circle cx="200" cy="200" r="110"/>
+      <circle cx="200" cy="200" r="70"/>
+      <line x1="50" y1="200" x2="350" y2="200"/>
+      <line x1="200" y1="50" x2="200" y2="350"/>
+      <line x1="94" y1="94" x2="306" y2="306"/>
+      <line x1="306" y1="94" x2="94" y2="306"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <div class="badge">4th June · Global Observance</div>
+
+    <p class="hero-eyebrow">EAC Regional Webinar</p>
+
+    <h1 class="hero-title">
+      World Food<br/><span>Safety Day</span><br/>2026
+    </h1>
+
+    <p class="hero-subtitle">
+      East African Community Regional Webinar on the Commemoration of
+      World Food Safety Day 2026 &mdash; bringing together experts, policymakers,
+      and stakeholders across the region.
+    </p>
+
+    <div class="meta-strip">
+      <div class="meta-card">
+        <span class="label">Date</span>
+        <span class="value">4th June 2026</span>
+      </div>
+      <div class="meta-card">
+        <span class="label">Format</span>
+        <span class="value">Virtual Webinar</span>
+      </div>
+      <div class="meta-card">
+        <span class="label">Organiser</span>
+        <span class="value">EAC Region</span>
+      </div>
+    </div>
+
+    <div class="theme-band">
+      &ldquo;From Burden to Solution &mdash; Safe Food Everywhere&rdquo;
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Join Sessions</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ══════════════ MEETINGS ══════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="section-label reveal">Session Links</p>
+    <h2 class="section-heading reveal reveal-delay-1">Join the Webinar Sessions</h2>
+
+    <div class="meetings-grid">
+
+      <!-- DAY 1 -->
+      <div class="meeting-card reveal reveal-delay-2">
+        <span class="day-pill">Day 1</span>
+        <h3 class="meeting-title">Zoom Meeting Session &mdash; on 1st June 2026</h3>
+        <p class="meeting-desc">
+          Join us for the official opening session.
+        </p>
+        <!-- Replace # with your actual Day 1 meeting link -->
+        <a href="https://iso.zoom.us/j/93752936481?pwd=lBcDkZHZs8c94fNPCnpaMoG6IszAoc.1" class="join-btn" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          Join Day 1 Meeting
+        </a>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="meeting-card day2 reveal reveal-delay-3">
+        <span class="day-pill">Day 2</span>
+        <h3 class="meeting-title">Microsoft Teams Session &mdash; 2nd June 2026</h3>
+        <p class="meeting-desc">
+          Engage in technical discussions, working group sessions, and the
+          formulation of regional commitments toward safer food systems for all.
+        </p>
+        <!-- Replace # with your actual Day 2 Zoom link -->
+        <a href="https://teams.microsoft.com/meet/347207967463721?p=kXMU8AP10vaIsaZCfY" class="join-btn" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          Join Day 2 Zoom
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section class="section about-section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <p class="section-label reveal">About the Theme</p>
+        <h2 class="section-heading reveal reveal-delay-1">
+          From Burden<br/>to Solution - Safe Food Everywhere
+        </h2>
+        <div class="about-text reveal reveal-delay-2">
+          <p>
+            World Food Safety Day, observed annually on 4th June, is a global
+            platform to draw attention to and inspire action to prevent, detect,
+            and manage foodborne risks.
+          </p>
+          <p>
+            The 2026 theme &mdash; <em>"Safe Food Everywhere"</em> &mdash; reflects a
+            collective commitment to shift the narrative: food safety is not merely
+            a compliance burden but a powerful driver of public health, economic
+            growth, and sustainable food systems.
+          </p>
+          <p>
+            This EAC Regional Webinar unites governments, regulatory bodies,
+            industry, academia, and civil society to share knowledge and forge
+            regional solutions.
+          </p>
+        </div>
+      </div>
+
+      <!-- <div class="stat-list reveal reveal-delay-2">
+        <div class="stat-item">
+          <div class="stat-num">600M</div>
+          <div class="stat-desc">People fall ill every year from eating contaminated food globally</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">420K</div>
+          <div class="stat-desc">Deaths annually attributed to preventable foodborne diseases</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7 EAC</div>
+          <div class="stat-desc">Partner States committed to advancing regional food safety standards</div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-logo">EAC Regional Webinar · World Food Safety Day 2026</div>
+  <div class="footer-sub">4th June 2026 &nbsp;·&nbsp; Theme: From Burden to Solution — Safe Food Everywhere</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
