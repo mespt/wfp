@@ -23,13 +23,13 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Outfit', sans-serif;
       background: var(--cream);
       color: var(--text-dark);
-      overflow-x: hidden;
+
     }
 
     /* ── HERO ── */
@@ -302,7 +302,8 @@
        ── MAP MODAL (responsive) ──
     ══════════════════════════════════════ */
     .map-modal {
-      position: fixed; inset: 0; z-index: 9999;
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999;
+      overflow: hidden;
       display: flex;
       align-items: center;      /* always vertically centred */
       justify-content: center;  /* always horizontally centred */
@@ -316,7 +317,7 @@
 
     .map-modal-box {
       background: #fff; border-radius: 20px; overflow: hidden;
-      width: 100%; max-width: 780px;
+      width: 100%; max-width: min(780px, calc(100vw - 40px));
       /* Never taller than the viewport minus padding */
       max-height: calc(100dvh - 40px);
       display: flex; flex-direction: column;
@@ -362,7 +363,8 @@
        ── JOIN PICKER MODAL (Day 3) ──
     ══════════════════════════════════════ */
     .join-modal {
-      position: fixed; inset: 0; z-index: 9999;
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -376,7 +378,7 @@
 
     .join-modal-box {
       background: var(--cream); border-radius: 24px; overflow: hidden;
-      width: 100%; max-width: 420px;
+      width: 100%; max-width: min(420px, calc(100vw - 40px));
       max-height: calc(100dvh - 40px);
       overflow-y: auto;
       box-shadow: 0 32px 80px rgba(0,0,0,.32);
