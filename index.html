@@ -44,7 +44,6 @@
       text-align: center;
       padding: 60px 24px 80px;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -54,7 +53,6 @@
         radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212,168,67,.12) 0%, transparent 55%);
       z-index: 0;
     }
-
     .hero::after {
       content: '';
       position: absolute;
@@ -66,13 +64,10 @@
       z-index: 0;
       pointer-events: none;
     }
-
     .hero-content { position: relative; z-index: 1; max-width: 860px; }
 
-    /* ── CIRCULAR LOGO ── */
     .hero-logo {
-      width: 130px;
-      height: 130px;
+      width: 130px; height: 130px;
       border-radius: 50%;
       object-fit: contain;
       background: #fff;
@@ -87,18 +82,6 @@
       animation: fadeUp 0.7s ease 0.1s forwards;
     }
 
-    .hero-eyebrow {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.35s forwards;
-    }
-
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.8rem, 7vw, 6.5rem);
@@ -110,13 +93,7 @@
       opacity: 0;
       animation: fadeUp 0.8s ease 0.5s forwards;
     }
-
-    .hero-title span {
-      color: var(--gold);
-      position: relative;
-      display: inline-block;
-    }
-
+    .hero-title span { color: var(--gold); position: relative; display: inline-block; }
     .hero-title span::after {
       content: '';
       position: absolute;
@@ -139,7 +116,6 @@
       animation: fadeUp 0.8s ease 0.65s forwards;
     }
 
-    /* ── META CARDS ── */
     .meta-strip {
       display: flex;
       flex-wrap: wrap;
@@ -149,7 +125,6 @@
       opacity: 0;
       animation: fadeUp 0.8s ease 0.8s forwards;
     }
-
     .meta-card {
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
@@ -162,31 +137,24 @@
       gap: 4px;
       min-width: 170px;
     }
-
     .meta-card .label {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--green-light);
     }
-
     .meta-card .value {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
+      font-size: 1.15rem; font-weight: 600;
       color: var(--cream);
     }
 
-    /* ── THEME BAND ── */
     .theme-band {
       display: inline-block;
       background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
       color: var(--green-deep);
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1rem, 2.5vw, 1.35rem);
-      font-weight: 700;
-      font-style: italic;
+      font-weight: 700; font-style: italic;
       letter-spacing: 0.02em;
       padding: 14px 36px;
       border-radius: 100px;
@@ -194,28 +162,16 @@
       animation: fadeUp 0.8s ease 0.95s forwards;
     }
 
-    /* ── SCROLL ARROW ── */
     .scroll-hint {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
+      position: absolute; bottom: 36px; left: 50%;
       transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      opacity: 0;
-      animation: fadeIn 1s ease 1.5s forwards;
-      z-index: 1;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      opacity: 0; animation: fadeIn 1s ease 1.5s forwards; z-index: 1;
     }
-
     .scroll-hint span {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
       color: rgba(250,247,240,.4);
     }
-
     .scroll-arrow {
       width: 22px; height: 22px;
       border-right: 2px solid rgba(250,247,240,.3);
@@ -223,43 +179,26 @@
       transform: rotate(45deg);
       animation: bounce 1.6s infinite;
     }
-
     @keyframes bounce {
       0%, 100% { transform: rotate(45deg) translateY(0); }
       50%       { transform: rotate(45deg) translateY(6px); }
     }
 
-    /* ── DECORATIVE LEAF ── */
-    .deco-leaf {
-      position: absolute;
-      opacity: 0.08;
-      pointer-events: none;
-    }
+    .deco-leaf { position: absolute; opacity: 0.08; pointer-events: none; }
 
-    /* ── SECTION ── */
+    /* ── SECTIONS ── */
     .section { padding: 100px 24px; }
-
-    .section-inner {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
+    .section-inner { max-width: 980px; margin: 0 auto; }
     .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--green-mid);
-      margin-bottom: 12px;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--green-mid); margin-bottom: 12px;
     }
-
     .section-heading {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 700;
-      color: var(--green-deep);
-      line-height: 1.15;
-      margin-bottom: 48px;
+      font-weight: 700; color: var(--green-deep);
+      line-height: 1.15; margin-bottom: 48px;
     }
 
     /* ── MEETING CARDS ── */
@@ -268,411 +207,354 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 28px;
     }
-
     .meeting-card {
       background: #fff;
       border: 1px solid var(--cream-dark);
       border-radius: 20px;
       padding: 36px;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
     }
-
     .meeting-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 24px 60px rgba(26,61,43,.12);
     }
-
     .meeting-card::before {
       content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
       background: linear-gradient(90deg, var(--green-mid), var(--green-light));
     }
-
     .meeting-card.day2::before {
       background: linear-gradient(90deg, var(--gold), var(--gold-light));
     }
 
     .day-pill {
       display: inline-block;
-      background: var(--green-deep);
-      color: var(--cream);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 100px;
-      margin-bottom: 20px;
-      align-self: flex-start;
+      background: var(--green-deep); color: var(--cream);
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 20px; align-self: flex-start;
     }
-
-    .meeting-card.day2 .day-pill {
-      background: var(--gold);
-      color: var(--green-deep);
-    }
+    .meeting-card.day2 .day-pill { background: var(--gold); color: var(--green-deep); }
 
     .meeting-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--green-deep);
-      margin-bottom: 10px;
-      line-height: 1.2;
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--green-deep); margin-bottom: 10px; line-height: 1.2;
     }
-
     .meeting-theme {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--green-mid);
-      font-style: italic;
-      margin-bottom: 10px;
-      line-height: 1.45;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--green-mid); font-style: italic;
+      margin-bottom: 10px; line-height: 1.45;
     }
-
     .meeting-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 24px;
-      flex: 1;
+      font-size: 0.9rem; color: var(--text-muted);
+      line-height: 1.65; margin-bottom: 24px; flex: 1;
     }
 
-    /* ── INLINE VENUE LINK (blends into prose) ── */
+    /* ── INLINE VENUE LINK ── */
     .venue-inline {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      font-family: inherit;
-      font-size: inherit;
-      font-weight: 600;
-      color: var(--green-mid);
-      cursor: pointer;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
+      display: inline-flex; align-items: center; gap: 3px;
+      background: none; border: none; padding: 0; margin: 0;
+      font-family: inherit; font-size: inherit; font-weight: 600;
+      color: var(--green-mid); cursor: pointer;
+      text-decoration: underline; text-decoration-color: transparent;
+      text-decoration-thickness: 1px; text-underline-offset: 2px;
       transition: color 0.2s ease, text-decoration-color 0.2s ease;
-      vertical-align: baseline;
-      line-height: inherit;
+      vertical-align: baseline; line-height: inherit;
     }
-
-    .venue-inline:hover {
-      color: var(--green-deep);
-      text-decoration-color: var(--green-mid);
-    }
-
+    .venue-inline:hover { color: var(--green-deep); text-decoration-color: var(--green-mid); }
     .venue-inline svg {
-      width: 12px;
-      height: 12px;
-      flex-shrink: 0;
-      fill: currentColor;
-      position: relative;
-      top: -1px;
-      opacity: 0.7;
+      width: 12px; height: 12px; flex-shrink: 0; fill: currentColor;
+      position: relative; top: -1px; opacity: 0.7;
       transition: opacity 0.2s ease;
     }
-
-    .venue-inline:hover svg {
-      opacity: 1;
-    }
+    .venue-inline:hover svg { opacity: 1; }
 
     /* ── BUTTON ROW ── */
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
-    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
 
     .join-btn, .dir-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 11px 22px;
-      border-radius: 100px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600;
+      padding: 11px 22px; border-radius: 100px;
+      text-decoration: none; border: none; cursor: pointer;
       transition: background 0.25s ease, transform 0.2s ease;
     }
+    .join-btn { background: var(--green-deep); color: var(--cream); }
+    .join-btn:hover { background: var(--green-mid); transform: scale(1.03); }
+    .meeting-card.day2 .join-btn { background: var(--gold); color: var(--green-deep); }
+    .meeting-card.day2 .join-btn:hover { background: var(--gold-light); }
 
-    .join-btn {
-      background: var(--green-deep);
-      color: var(--cream);
-    }
-
-    .join-btn:hover {
-      background: var(--green-mid);
-      transform: scale(1.03);
-    }
-
-    .meeting-card.day2 .join-btn {
-      background: var(--gold);
-      color: var(--green-deep);
-    }
-
-    .meeting-card.day2 .join-btn:hover {
-      background: var(--gold-light);
-    }
-
-    .dir-btn {
-      background: transparent;
-      color: var(--green-mid);
-      border: 1.5px solid var(--green-mid);
-    }
-
-    .dir-btn:hover {
-      background: var(--green-mid);
-      color: #fff;
-      transform: scale(1.03);
-    }
-
-    .meeting-card.day2 .dir-btn {
-      color: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .meeting-card.day2 .dir-btn:hover {
-      background: var(--gold);
-      color: var(--green-deep);
-    }
+    .dir-btn { background: transparent; color: var(--green-mid); border: 1.5px solid var(--green-mid); }
+    .dir-btn:hover { background: var(--green-mid); color: #fff; transform: scale(1.03); }
+    .meeting-card.day2 .dir-btn { color: var(--gold); border-color: var(--gold); }
+    .meeting-card.day2 .dir-btn:hover { background: var(--gold); color: var(--green-deep); }
 
     .btn-icon {
-      width: 16px; height: 16px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex-shrink: 0;
+      width: 16px; height: 16px; fill: none; stroke: currentColor;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;
     }
 
-    /* ── MAP MODAL ── */
+    /* ══════════════════════════════════════
+       ── MAP MODAL (responsive) ──
+    ══════════════════════════════════════ */
     .map-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(10, 25, 16, 0.75);
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px;
+      background: rgba(10,25,16,.75);
       backdrop-filter: blur(6px);
-      opacity: 0;
-      pointer-events: none;
+      opacity: 0; pointer-events: none;
       transition: opacity 0.3s ease;
     }
-
-    .map-modal.active {
-      opacity: 1;
-      pointer-events: all;
-    }
+    .map-modal.active { opacity: 1; pointer-events: all; }
 
     .map-modal-box {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      width: 100%;
-      max-width: 780px;
+      background: #fff; border-radius: 20px; overflow: hidden;
+      width: 100%; max-width: 780px;
+      max-height: calc(100dvh - 32px);
+      display: flex; flex-direction: column;
       box-shadow: 0 32px 80px rgba(0,0,0,.35);
       transform: translateY(24px) scale(0.97);
       transition: transform 0.35s cubic-bezier(.22,1,.36,1);
-      position: relative;
     }
-
-    .map-modal.active .map-modal-box {
-      transform: translateY(0) scale(1);
-    }
+    .map-modal.active .map-modal-box { transform: translateY(0) scale(1); }
 
     .map-modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 22px;
-      background: var(--green-deep);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; background: var(--green-deep); flex-shrink: 0;
     }
-
     .map-modal-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--cream);
-      letter-spacing: 0.04em;
+      font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 600;
+      color: var(--cream); letter-spacing: 0.04em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-right: 12px;
     }
-
     .map-close {
-      background: rgba(255,255,255,.12);
-      border: none;
-      color: var(--cream);
-      font-size: 1.1rem;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s;
-      line-height: 1;
+      background: rgba(255,255,255,.12); border: none; color: var(--cream);
+      font-size: 1rem; width: 34px; height: 34px; min-width: 34px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s; line-height: 1;
+      touch-action: manipulation;
     }
-
-    .map-close:hover { background: rgba(255,255,255,.25); }
+    .map-close:hover  { background: rgba(255,255,255,.25); }
+    .map-close:active { background: rgba(255,255,255,.35); }
 
     .map-modal-iframe {
-      width: 100%;
-      height: 420px;
-      border: none;
-      display: block;
+      width: 100%; flex: 1; min-height: 0; border: none; display: block;
     }
+    .map-modal-footer {
+      flex-shrink: 0; padding: 10px 18px;
+      background: #f8f8f8; border-top: 1px solid #eee; text-align: right;
+    }
+    .map-open-link {
+      font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 600;
+      color: var(--green-mid); text-decoration: none; letter-spacing: 0.04em;
+    }
+    .map-open-link:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════════════
+       ── JOIN PICKER MODAL (Day 3) ──
+    ══════════════════════════════════════ */
+    .join-modal {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px;
+      background: rgba(10,25,16,.72);
+      backdrop-filter: blur(8px);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .join-modal.active { opacity: 1; pointer-events: all; }
+
+    .join-modal-box {
+      background: var(--cream); border-radius: 24px; overflow: hidden;
+      width: 100%; max-width: 420px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.28);
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.35s cubic-bezier(.22,1,.36,1);
+    }
+    .join-modal.active .join-modal-box { transform: translateY(0) scale(1); }
+
+    .join-modal-header {
+      background: var(--green-deep);
+      padding: 20px 22px 18px;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    }
+    .join-modal-titles { flex: 1; min-width: 0; }
+    .join-modal-eyebrow {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--green-light); margin-bottom: 4px;
+    }
+    .join-modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 700; color: var(--cream); line-height: 1.2;
+    }
+    .join-modal-close {
+      background: rgba(255,255,255,.12); border: none; color: var(--cream);
+      font-size: 1rem; width: 32px; height: 32px; min-width: 32px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.2s; flex-shrink: 0;
+      touch-action: manipulation; line-height: 1;
+    }
+    .join-modal-close:hover  { background: rgba(255,255,255,.25); }
+    .join-modal-close:active { background: rgba(255,255,255,.35); }
+
+    .join-modal-body { padding: 24px 22px; display: flex; flex-direction: column; gap: 14px; }
+
+    .join-modal-hint {
+      font-size: 0.82rem; color: var(--text-muted);
+      text-align: center; margin-bottom: 4px; line-height: 1.5;
+    }
+
+    /* Each platform option */
+    .platform-btn {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px 20px; border-radius: 14px; text-decoration: none;
+      border: 1.5px solid var(--cream-dark);
+      background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.18s ease;
+      cursor: pointer;
+    }
+    .platform-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,61,43,.1);
+    }
+
+    .platform-btn.teams { --accent: #5059C9; }
+    .platform-btn.zoom  { --accent: #2D8CFF; }
+
+    .platform-btn:hover { border-color: var(--accent); }
+
+    .platform-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent); flex-shrink: 0;
+    }
+    .platform-icon svg { width: 24px; height: 24px; }
+
+    .platform-info { flex: 1; min-width: 0; }
+    .platform-name {
+      font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--text-dark); margin-bottom: 2px;
+    }
+    .platform-desc {
+      font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;
+    }
+
+    .platform-arrow {
+      color: var(--text-muted); font-size: 1rem; flex-shrink: 0;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .platform-btn:hover .platform-arrow { transform: translateX(3px); color: var(--accent); }
 
     /* ── DIVIDER ── */
     .divider {
-      border: none;
-      height: 1px;
+      border: none; height: 1px;
       background: linear-gradient(90deg, transparent, var(--cream-dark), transparent);
       margin: 0 24px;
     }
 
     /* ── ABOUT SECTION ── */
-    .about-section {
-      background: var(--green-deep);
-      position: relative;
-      overflow: hidden;
-    }
-
+    .about-section { background: var(--green-deep); position: relative; overflow: hidden; }
     .about-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 60% 70% at 90% 50%, rgba(82,183,136,.12) 0%, transparent 60%);
     }
-
     .about-section .section-label  { color: var(--green-light); }
     .about-section .section-heading { color: var(--cream); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .about-text {
-      font-size: 1rem;
-      color: rgba(250,247,240,.75);
-      line-height: 1.8;
-      max-width: 720px;
-    }
-
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 48px; position: relative; z-index: 1; }
+    .about-text { font-size: 1rem; color: rgba(250,247,240,.75); line-height: 1.8; max-width: 720px; }
     .about-text p + p { margin-top: 16px; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--text-dark);
-      text-align: center;
-      padding: 48px 24px 36px;
-    }
-
+    footer { background: var(--text-dark); text-align: center; padding: 48px 24px 36px; }
     .footer-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; justify-content: center;
+      gap: 32px; margin-bottom: 28px; flex-wrap: wrap;
     }
-
     .footer-org {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
       text-decoration: none;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      opacity: 0.85;
+      transition: transform 0.2s ease, opacity 0.2s ease; opacity: 0.85;
     }
-
     .footer-org:hover { transform: translateY(-3px); opacity: 1; }
-
     .footer-org img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      padding: 4px;
-      filter: brightness(0.95);
+      width: 56px; height: 56px; object-fit: contain;
+      border-radius: 8px; background: rgba(255,255,255,0.06);
+      padding: 4px; filter: brightness(0.95);
     }
-
     .footer-org-name {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(250,247,240,.45);
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(250,247,240,.45);
     }
-
-    .footer-divider {
-      width: 60px;
-      height: 1px;
-      background: rgba(250,247,240,.1);
-      margin: 0 auto 20px;
-    }
-
+    .footer-divider { width: 60px; height: 1px; background: rgba(250,247,240,.1); margin: 0 auto 20px; }
     .footer-logo-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--cream);
-      margin-bottom: 8px;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+      font-weight: 600; color: var(--cream); margin-bottom: 8px;
     }
-
-    .footer-sub {
-      font-size: 0.78rem;
-      color: rgba(250,247,240,.35);
-      letter-spacing: 0.08em;
-    }
+    .footer-sub { font-size: 0.78rem; color: rgba(250,247,240,.35); letter-spacing: 0.08em; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from { opacity: 0; } to { opacity: 1; }
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
     .reveal.visible       { opacity: 1; transform: translateY(0); }
     .reveal-delay-1       { transition-delay: 0.1s; }
     .reveal-delay-2       { transition-delay: 0.22s; }
     .reveal-delay-3       { transition-delay: 0.34s; }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 860px) { .map-modal-box { border-radius: 16px; } }
+
+    @media (max-width: 540px) {
+      .map-modal { align-items: flex-end; padding: 0; }
+      .map-modal-box {
+        border-radius: 20px 20px 0 0;
+        max-height: 88dvh;
+        transform: translateY(100%);
+      }
+      .map-modal.active .map-modal-box { transform: translateY(0); }
+      .map-modal-header { position: relative; padding: 14px 16px; }
+      .map-modal-header::before {
+        content: ''; position: absolute; top: -12px; left: 50%;
+        transform: translateX(-50%);
+        width: 36px; height: 4px; background: rgba(255,255,255,.35); border-radius: 2px;
+      }
+      .map-modal-footer { padding: 10px 16px; }
+
+      /* Join picker also slides up on mobile */
+      .join-modal { align-items: flex-end; padding: 0; }
+      .join-modal-box {
+        border-radius: 24px 24px 0 0; max-width: 100%;
+        transform: translateY(100%);
+      }
+      .join-modal.active .join-modal-box { transform: translateY(0); }
+      .join-modal-header { position: relative; }
+      .join-modal-header::before {
+        content: ''; position: absolute; top: -12px; left: 50%;
+        transform: translateX(-50%);
+        width: 36px; height: 4px; background: rgba(255,255,255,.3); border-radius: 2px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .map-modal-box { max-height: 92dvh; }
+      .map-modal-title { font-size: 0.8rem; }
+    }
+
     @media (max-width: 680px) {
-      .meta-card        { min-width: 140px; }
-      .map-modal-iframe { height: 320px; }
-      .footer-logos     { gap: 20px; }
-      .footer-org img   { width: 46px; height: 46px; }
+      .meta-card { min-width: 140px; }
+      .footer-logos { gap: 20px; }
+      .footer-org img { width: 46px; height: 46px; }
     }
   </style>
 </head>
@@ -685,20 +567,66 @@
       <span class="map-modal-title" id="mapModalTitle">Venue Location</span>
       <button class="map-close" onclick="closeMap()" aria-label="Close map">✕</button>
     </div>
-    <iframe
-      class="map-modal-iframe"
-      id="mapFrame"
-      src=""
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <iframe class="map-modal-iframe" id="mapFrame" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-modal-footer">
+      <a id="mapOpenLink" href="#" target="_blank" rel="noopener noreferrer" class="map-open-link">Open in Google Maps ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ JOIN PICKER MODAL (Day 3) ══════════════ -->
+<div class="join-modal" id="joinModal" role="dialog" aria-modal="true" aria-label="Choose platform">
+  <div class="join-modal-box">
+    <div class="join-modal-header">
+      <div class="join-modal-titles">
+        <p class="join-modal-eyebrow">Day 3 · 4 June 2026</p>
+        <h2 class="join-modal-title">EAC Regional Virtual Webinar</h2>
+      </div>
+      <button class="join-modal-close" onclick="closeJoin()" aria-label="Close">✕</button>
+    </div>
+    <div class="join-modal-body">
+      <p class="join-modal-hint">Choose your preferred platform to join the session:</p>
+
+      <!-- Microsoft Teams -->
+      <a href="https://teams.microsoft.com/meet/347207967463721?p=kXMU8AP10vaIsaZCfY"
+         class="platform-btn teams" target="_blank" rel="noopener noreferrer" onclick="closeJoin()">
+        <div class="platform-icon">
+          <!-- Teams icon -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="#fff"/>
+            <path d="M16 10h4a1 1 0 0 1 1 1v5a3 3 0 0 1-3 3h-.5A3.5 3.5 0 0 1 14 15.5V11a1 1 0 0 1 1-1z" fill="#fff" opacity=".85"/>
+            <path d="M9 11.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#fff"/>
+            <path d="M4 13h10a1 1 0 0 1 1 1v5a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-5a1 1 0 0 1 1-1z" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="platform-info">
+          <div class="platform-name">Microsoft Teams</div>
+          <div class="platform-desc">Click to open in Teams on desktop or browser</div>
+        </div>
+        <span class="platform-arrow">→</span>
+      </a>
+
+      <!-- Zoom -->
+      <a href="https://iso.zoom.us/j/93752936481?pwd=lBcDkZHZs8c94fNPCnpaMoG6IszAoc.1"
+         class="platform-btn zoom" target="_blank" rel="noopener noreferrer" onclick="closeJoin()">
+        <div class="platform-icon">
+          <!-- Zoom camera icon -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 10l4.55-2.28A1 1 0 0 1 21 8.62v6.76a1 1 0 0 1-1.45.9L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="platform-info">
+          <div class="platform-name">Zoom</div>
+          <div class="platform-desc">Click to open in Zoom app or web browser</div>
+        </div>
+        <span class="platform-arrow">→</span>
+      </a>
+    </div>
   </div>
 </div>
 
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero">
-
   <svg class="deco-leaf" style="top:-60px;right:-80px;width:520px;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#52b788" stroke-width="1.2">
       <ellipse cx="200" cy="200" rx="160" ry="80" transform="rotate(30 200 200)"/>
@@ -710,28 +638,19 @@
       <line x1="230" y1="175" x2="200" y2="200" transform="rotate(30 200 200)"/>
     </g>
   </svg>
-
   <svg class="deco-leaf" style="bottom:-40px;left:-60px;width:460px;opacity:.05;" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#d4a843" stroke-width="1.5">
-      <circle cx="200" cy="200" r="150"/>
-      <circle cx="200" cy="200" r="110"/>
+      <circle cx="200" cy="200" r="150"/><circle cx="200" cy="200" r="110"/>
       <circle cx="200" cy="200" r="70"/>
-      <line x1="50" y1="200" x2="350" y2="200"/>
-      <line x1="200" y1="50" x2="200" y2="350"/>
-      <line x1="94" y1="94" x2="306" y2="306"/>
-      <line x1="306" y1="94" x2="94" y2="306"/>
+      <line x1="50" y1="200" x2="350" y2="200"/><line x1="200" y1="50" x2="200" y2="350"/>
+      <line x1="94" y1="94" x2="306" y2="306"/><line x1="306" y1="94" x2="94" y2="306"/>
     </g>
   </svg>
 
   <div class="hero-content">
     <img src="wfp.jpeg" alt="WFP Logo" class="hero-logo" />
-    <!-- <p class="hero-eyebrow">EAC Regional Webinar</p> -->
-    <h1 class="hero-title">
-      World Food<br/><span>Safety Day</span><br/>2026
-    </h1>
-    <p class="hero-subtitle">
-      Theme: From Burden to Solution – Safe Food Everywhere.
-    </p>
+    <h1 class="hero-title">World Food<br/><span>Safety Day</span><br/>2026</h1>
+    <p class="hero-subtitle">Theme: From Burden to Solution – Safe Food Everywhere.</p>
     <div class="meta-strip">
       <div class="meta-card">
         <span class="label">Dates</span>
@@ -741,16 +660,9 @@
         <span class="label">Format</span>
         <span class="value">Hybrid Webinar</span>
       </div>
-      <!-- <div class="meta-card">
-        <span class="label">Organiser</span>
-        <span class="value">EAC Region</span>
-      </div> -->
     </div>
-    <div class="theme-band">
-      &ldquo;From Burden to Solution &mdash; Safe Food Everywhere&rdquo;
-    </div>
+    <div class="theme-band">&ldquo;From Burden to Solution &mdash; Safe Food Everywhere&rdquo;</div>
   </div>
-
   <div class="scroll-hint">
     <span>Join Sessions</span>
     <div class="scroll-arrow"></div>
@@ -772,9 +684,7 @@
         <span class="day-pill">Day 1 · 2 June</span>
         <h3 class="meeting-title">Main Conference Session</h3>
         <p class="meeting-theme">Strengthening Food Safety in Formal Markets</p>
-        <p class="meeting-desc">
-          Official opening session hosted at the Kenya Bureau of Standards (KEBS) Head Office, Nairobi.
-        </p>
+        <p class="meeting-desc">Official opening session hosted at the Kenya Bureau of Standards (KEBS) Head Office, Nairobi.</p>
         <div class="btn-row">
           <button class="dir-btn" onclick="openMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.07835810377!2d36.762681221679664!3d-1.3228899999999968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11b747af519d%3A0x8c232adc11c402d9!2sKenya%20Bureau%20of%20Standards%20-%20Head%20Office!5e0!3m2!1sen!2ske!4v1779858650975!5m2!1sen!2ske', 'KEBS Head Office')">
             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -796,26 +706,24 @@
           with a live Zoom broadcast for remote participants.
         </p>
         <div class="btn-row">
-          <a href="https://iso.zoom.us/j/93752936481?pwd=lBcDkZHZs8c94fNPCnpaMoG6IszAoc.1" class="join-btn" target="_blank" rel="noopener noreferrer">
-            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
-            Join on Zoom
-          </a>
-        </div>
-      </div>
-
-      <!-- DAY 3 -->
-      <div class="meeting-card day2 reveal reveal-delay-3">
-        <span class="day-pill">Day 3 · 4 June</span>
-        <h3 class="meeting-title">EAC Regional Virtual Webinar</h3>
-        <p class="meeting-theme">Food MRLs and Contaminants</p>
-        <p class="meeting-desc">
-          Regional online session via Microsoft Teams, open to participants across all EAC Partner States.
-        </p>
-        <div class="btn-row">
           <a href="https://teams.microsoft.com/meet/347207967463721?p=kXMU8AP10vaIsaZCfY" class="join-btn" target="_blank" rel="noopener noreferrer">
             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
             Join on Teams
           </a>
+        </div>
+      </div>
+
+      <!-- DAY 3 — platform picker trigger -->
+      <div class="meeting-card day2 reveal reveal-delay-3">
+        <span class="day-pill">Day 3 · 4 June</span>
+        <h3 class="meeting-title">EAC Regional Virtual Webinar</h3>
+        <p class="meeting-theme">Food MRLs and Contaminants</p>
+        <p class="meeting-desc">Regional online session open to participants across all EAC Partner States. Available on both Microsoft Teams and Zoom.</p>
+        <div class="btn-row">
+          <button class="join-btn" onclick="openJoin()">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            Join Session
+          </button>
         </div>
       </div>
 
@@ -824,9 +732,7 @@
         <span class="day-pill">Day 4 · 5 June</span>
         <h3 class="meeting-title">Nairobi City Park Market Clean-Up</h3>
         <p class="meeting-theme">From Burden to Solution — Safe Food Everywhere</p>
-        <p class="meeting-desc">
-          Community clean-up and food safety awareness exercise at Nairobi City Park Market.
-        </p>
+        <p class="meeting-desc">Community clean-up and food safety awareness exercise at Nairobi City Park Market.</p>
         <div class="btn-row">
           <button class="dir-btn" onclick="openMap('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.394975433648!2d36.81075640538443!3d-1.2631673814659594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f16e0a361a209%3A0x9e36784a50f9d8a!2sCity%20Park!5e0!3m2!1sen!2ske!4v1779859304567!5m2!1sen!2ske', 'Nairobi City Park')">
             <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -847,22 +753,10 @@
     <div class="about-grid">
       <div>
         <p class="section-label reveal">About the Theme</p>
-        <h2 class="section-heading reveal reveal-delay-1">
-          From Burden to Solution<br/>— Safe Food Everywhere
-        </h2>
+        <h2 class="section-heading reveal reveal-delay-1">From Burden to Solution<br/>— Safe Food Everywhere</h2>
         <div class="about-text reveal reveal-delay-2">
-          <p>
-            World Food Safety Day, observed annually on 7th June, is a global
-            platform to draw attention to and inspire action to prevent, detect,
-            and manage foodborne risks.
-          </p>
-          <p>
-            The 2026 theme &mdash; <em>"Safe Food Everywhere"</em> &mdash; reflects a
-            collective commitment to shift the narrative: food safety is not merely
-            a compliance burden but a powerful driver of public health, economic
-            growth, and sustainable food systems.
-          </p>
-         
+          <p>World Food Safety Day, observed annually on 7th June, is a global platform to draw attention to and inspire action to prevent, detect, and manage foodborne risks.</p>
+          <p>The 2026 theme &mdash; <em>"Safe Food Everywhere"</em> &mdash; reflects a collective commitment to shift the narrative: food safety is not merely a compliance burden but a powerful driver of public health, economic growth, and sustainable food systems.</p>
         </div>
       </div>
     </div>
@@ -892,37 +786,62 @@
 
 <!-- ══════════════ JS ══════════════ -->
 <script>
+  // ── Scroll reveal ──
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
 
+  // ── MAP MODAL ──
+  function embedToShareUrl(embedSrc) {
+    try {
+      const url = new URL(embedSrc);
+      return 'https://maps.google.com/maps' + url.search;
+    } catch { return 'https://maps.google.com'; }
+  }
+
   function openMap(src, title) {
     document.getElementById('mapFrame').src = src;
     document.getElementById('mapModalTitle').textContent = title || 'Venue Location';
+    document.getElementById('mapOpenLink').href = embedToShareUrl(src);
     document.getElementById('mapModal').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeMap() {
     document.getElementById('mapModal').classList.remove('active');
     document.body.style.overflow = '';
     setTimeout(() => { document.getElementById('mapFrame').src = ''; }, 350);
   }
+  document.getElementById('mapModal').addEventListener('click', function(e) { if (e.target === this) closeMap(); });
 
-  document.getElementById('mapModal').addEventListener('click', function(e) {
-    if (e.target === this) closeMap();
-  });
+  // ── JOIN PICKER MODAL ──
+  function openJoin() {
+    document.getElementById('joinModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeJoin() {
+    document.getElementById('joinModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('joinModal').addEventListener('click', function(e) { if (e.target === this) closeJoin(); });
 
+  // ── Escape closes both ──
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeMap();
+    if (e.key === 'Escape') { closeMap(); closeJoin(); }
   });
+
+  // ── Swipe down to close (mobile) ──
+  function addSwipeClose(boxSel, closeFn) {
+    const box = document.querySelector(boxSel);
+    let startY = 0;
+    box.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+    box.addEventListener('touchend',   e => { if (e.changedTouches[0].clientY - startY > 80) closeFn(); }, { passive: true });
+  }
+  addSwipeClose('.map-modal-box',  closeMap);
+  addSwipeClose('.join-modal-box', closeJoin);
 </script>
 
 </body>
